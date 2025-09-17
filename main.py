@@ -65,41 +65,20 @@ class Main(Compiler, Run):
         args = parser.parse_args()
         return args
 
+    def get_file_name(self):
+        f, ext = self.create_args().filename.split('.')
+        return f
+
     def perfom_args(self):
         args = self.create_args()
         if args.compile:
             compile = Compiler(args.filename)
             compile
         elif args.run:
-            run = Run('test.py')
+            run = Run(f'{self.get_file_name()}.py')
             run
-            print("Running")
         else:
             print("Invalid action")
 
 main = Main()
 main
-
-
-
-
-
-
-
-
-# def file_read():
-#     with open('test.py', 'r') as file:
-#         py_text = file.read()
-#     return py_text
-
-# b = file_read().encode('utf-8')
-
-# bits = ''.join(f"{byte:08b}" for byte in b)
-
-# tokens = ['pi' if bit == '0' else 'ip' for bit in bits]
-
-# grouped = [' '.join(tokens[i:i+8]) for i in range(0, len(tokens), 8)]
-# code = ' '.join(grouped)
-
-# with open('test.pi', 'w') as file2:
-#     file2.write(code)

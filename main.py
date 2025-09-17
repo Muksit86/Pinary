@@ -78,7 +78,7 @@ class Main(Compiler, Run):
             run = Run(f'{self.get_file_name()}.py')
             run
         else:
-            print("Invalid action")
+            print("Invalid action | type -h for help")
 
 main = Main()
 main

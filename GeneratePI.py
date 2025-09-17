@@ -1,6 +1,6 @@
 import os
 
-input_file = r'Examples\Count.py'
+input_file = r'Examples\HelloPinary.py'
 
 def file_read():
     with open(input_file, 'r') as file:
